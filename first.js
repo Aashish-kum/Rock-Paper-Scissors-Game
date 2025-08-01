@@ -6,6 +6,7 @@ const msg = document.querySelector("#msg");
 
 const userScorePara = document.querySelector("#user-score");
 const compScorePara = document.querySelector("#comp-score");
+const button = document.querySelector('.btn');
 
 const genCompChoice = () => {
   const options = ["rock", "paper", "scissors"];
@@ -32,6 +33,15 @@ const showWinner = (userWin, userChoice, compChoice) => {
   }
 };
 
+const reset = () => {
+  userScore = 0;
+  compScore = 0;
+  userScorePara.innerText = userScore;
+  compScorePara.innerText = compScore;
+  msg.innerText = "Play your move";
+  msg.style.backgroundColor = "#081b31";
+}
+
 const playGame = (userChoice) => {
   //Generate computer choice
   const compChoice = genCompChoice();
@@ -55,9 +65,17 @@ const playGame = (userChoice) => {
   }
 };
 
+
+
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     const userChoice = choice.getAttribute("id");
     playGame(userChoice);
+    resetbutton();
+
   });
 });
+
+button.addEventListener('click',()=>{
+  reset();
+})

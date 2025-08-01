@@ -66,3 +66,14 @@ img {
   padding: 1rem;
   border-radius: 1rem;
 }
+
+.btn {
+  margin-top: 50px;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 2rem;
+  display: inline;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+}
